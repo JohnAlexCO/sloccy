@@ -25,7 +25,8 @@ that belong to that family. Each Language-Family is separated
 by a `;` character, and each extension or name is separated
 with whitespace.
 
-## Bugs
+## Bugs / Missing Features
+- completely ignores comments and empty lines
 - the last line in the config, if there isn't a space after the last entry,
 will interpret it as having one less entry than it should
 - the `strncmp` function being used incorrectly returns `true` for strings of mismatched length
