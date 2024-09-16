@@ -3,4 +3,11 @@ xxd -n config -i config.md ./generated/config.h
 clang -o sloccy sloccy.c -w
 sudo ./sloccy -r
 ./sloccy -c
-./sloccy
+if ! OUTPUT=$(./sloccy -n); then
+    echo "Error: ./sloccy failed to execute."
+    exit 1
+fi
+{
+    cat ".readme"
+    echo "$OUTPUT"
+} > readme.md

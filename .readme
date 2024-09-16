@@ -30,7 +30,3 @@ such as `.readme` and `.r` since the first parts do match. It also completely ig
 `len` argument. Tried a couple fixes and had no luck so far, so coming back to it later
 
 ## Sloccy's Score
-               C    261 pts  9 files, 672 lines, 12696 chars
-               R    20 pts  1 files, 34 lines, 1005 chars
-            Text    28 pts  3 files, 97 lines, 1392 chars
-           Total    309 pts  13 files, 803 lines, 15093 chars

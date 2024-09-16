@@ -1,9 +1,13 @@
 #include <stdio.h>
-#define version "sloccy version 0.0.0, https://modula.dev"
+#define version "sloccy version 0.0.1, https://modula.dev"
 #define config_name "/usr/local/etc/sloccy.txt"
 #define true -1
 #define false 0
 #define bool int
+
+int noColor = false;
+int shallowSearch = false;
+
 #include "string.c"
 #include "file.c"
 #include "ansi.c"
@@ -12,8 +16,6 @@
 #include "count.c"
 #include "generated/config.h"
 #include "generated/help.h"
-
-int shallowSearch = false;
 
 void sloc(lconf_t *lconf, char *filename) {
     char *extension = getExt(filename); if (extension == NULL) { return; }
@@ -61,6 +63,7 @@ int main(int argc, char **argv){
                 exit(false);
             case 's':
                 shallowSearch = true; result++; break;
+            case 'n': noColor = true; result++; break;
             default:
                 printf("%s\n%s\n", version, help); exit(true);
         }
@@ -70,7 +73,7 @@ int main(int argc, char **argv){
         else { path = malloc(sizeof(char)*1024); getcwd(path, 1024); }
     }
     lconf = loadLanguages();
-    printf(green"%s"white"\n", path);
+    //printf(green"%s"white"\n", path);
     search(lconf, path);
     printResults(lconf);
 }

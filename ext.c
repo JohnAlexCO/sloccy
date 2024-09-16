@@ -88,9 +88,13 @@ void printLanguages(lconf_t *L){
     }
 }
 
+char *pResultsF =  "    "purple"%12s    "yellow"%d pts  "white"%d files, %d lines, %d chars\n";
+char *pResultsBW = "    %12s    %d pts  %d files, %d lines, %d chars\n";
 void printResults(lconf_t *L) {
     int i;
     int files = 0; int lines = 0; int chars = 0; int score = 0;
+    char *format;
+    if ( noColor == true ) { format = pResultsBW; } else { format = pResultsF; }
     for(i=0; i < L->entries; i++) {
         if (L->language[i].files == 0) { continue; }
         else {
@@ -98,7 +102,7 @@ void printResults(lconf_t *L) {
             files += L->language[i].files;
             lines += L->language[i].lines;
             chars += L->language[i].chars;
-            printf("    "purple"%12s    "yellow"%d pts  "white"%d files, %d lines, %d chars\n",
+            printf(format,
                 L->language[i].name,
                 L->language[i].score,
                 L->language[i].files,
@@ -106,9 +110,7 @@ void printResults(lconf_t *L) {
                 L->language[i].chars
             );
         }
-    }   printf("    "purple"%12s    "yellow"%d pts  "white"%d files, %d lines, %d chars\n",
-        "Total", score, files, lines, chars
-    );
+    }   printf(format, "Total", score, files, lines, chars);
 }
 
 char *getExt(char *filename) {
