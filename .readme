@@ -11,6 +11,7 @@ the expected average characters-per-line and number of characters.
 - `-h` flag will print a help message
 - `-v` will print the current version
 - `-s` will exclude subdirectories
+- `-n` will print without color (see `./build`)
 - `-r` will reset the configuration file
 - `-c` will print the configuration
 
