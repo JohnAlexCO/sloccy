@@ -14,6 +14,7 @@ the expected average characters-per-line and number of characters.
 - `-v` will print the current version
 - `-s` will exclude subdirectories
 - `-n` will print without color (see `./build`)
+- `-l` will count only `\n` as linebreaks
 - `-r` will reset the configuration file
 - `-c` will print the configuration
 
@@ -25,7 +26,8 @@ that belong to that family. Each Language-Family is separated
 by a `;` character, and each extension or name is separated
 with whitespace.
 
-## Bugs
+## Bugs / Missing Features
+- completely ignores comments and empty lines
 - the last line in the config, if there isn't a space after the last entry,
 will interpret it as having one less entry than it should
 - the `strncmp` function being used incorrectly returns `true` for strings of mismatched length
@@ -33,7 +35,15 @@ such as `.readme` and `.r` since the first parts do match. It also completely ig
 `len` argument. Tried a couple fixes and had no luck so far, so coming back to it later
 
 ## Sloccy's Score
-               C    261 pts  9 files, 672 lines, 12696 chars
-               R    23 pts  1 files, 37 lines, 1134 chars
-            Text    36 pts  3 files, 105 lines, 1773 chars
-           Total    320 pts  13 files, 814 lines, 15603 chars
+
+### ghloc score
+
+![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fghloc.vercel.app%2Fapi%2FJohnAlexCO%2Fsloccy%2Fbadge%3Ffilter%3D.c%24&label=C&labelColor=yellow&color=yellow)
+![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fghloc.vercel.app%2Fapi%2FJohnAlexCO%2Fsloccy%2Fbadge%3Ffilter%3D.md%24%2C.txt%24%2C.readme%24%2C.sml%24&label=Text&labelColor=blue&color=blue)
+![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fghloc.vercel.app%2Fapi%2FJohnAlexCO%2Fsloccy%2Fbadge&label=Total&labelColor=black&color=black)
+
+### Self-Given score
+               C    263 pts  9 files, 679 linebreaks, 12k chars
+               R    37 pts  1 files, 47 linebreaks, 1k chars
+            Text    52 pts  3 files, 117 linebreaks, 2k chars
+           Total    352 pts  13 files, 843 linebreaks, 17k chars

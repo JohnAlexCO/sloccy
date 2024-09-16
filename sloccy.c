@@ -7,6 +7,7 @@
 
 int noColor = false;
 int shallowSearch = false;
+int trueLinebreaks = false;
 
 #include "string.c"
 #include "file.c"
@@ -61,9 +62,9 @@ int main(int argc, char **argv){
                 result = file_write(config_name, config, config_len);
                 if (result == false) { printf("Unable to write to config file (%s), try running with sudo\n", config_name); exit(true); }
                 exit(false);
-            case 's':
-                shallowSearch = true; result++; break;
+            case 's': shallowSearch = true; result++; break;
             case 'n': noColor = true; result++; break;
+            case 'l': trueLinebreaks = true; result++; break;
             default:
                 printf("%s\n%s\n", version, help); exit(true);
         }
@@ -73,7 +74,6 @@ int main(int argc, char **argv){
         else { path = malloc(sizeof(char)*1024); getcwd(path, 1024); }
     }
     lconf = loadLanguages();
-    //printf(green"%s"white"\n", path);
     search(lconf, path);
     printResults(lconf);
 }

@@ -1,6 +1,6 @@
 #define lineScalar 48
 int calcScore(int filesize, int whitespace, int lines) {
-    int semantic = filesize - whitespace - lines;
+    int semantic = filesize - ( whitespace + lines );
     int score = semantic / lineScalar;
     return score;
 }
@@ -13,7 +13,8 @@ void count(lconf_t *lconf, char *filename, int ext){
     int i; for(i=0; i<handle; i++) {
         switch(fileBuffer[i]){
             case ' ': case '\r': case '\t': whitespace++; break;
-            case '\n': case ';': lines++; break;
+            case '\n': lines++; break;
+            case ';': if (trueLinebreaks == false) { lines++; } else { whitespace++; } break;
             default: break;
         }
     }
