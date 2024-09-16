@@ -26,8 +26,17 @@ that belong to that family. Each Language-Family is separated
 by a `;` character, and each extension or name is separated
 with whitespace.
 
-## Bugs / Missing Features
-- completely ignores comments and empty lines
+### Planned Features
+
+- custom values for `lineScalar` based on the language.
+probably get the scores for each language by downloading
+a bunch of very large samples and seeing what the average char/lines is
+- custom colors for each language
+- updating a directory's `readme.md` with sloccy badges using [ghloc](https://github.com/pajecawav/ghloc-web)
+
+## Known Bugs / Missing Features
+
+- comments and empty lines do not affect the count
 - the last line in the config, if there isn't a space after the last entry,
 will interpret it as having one less entry than it should
 - the `strncmp` function being used incorrectly returns `true` for strings of mismatched length
@@ -44,6 +53,6 @@ such as `.readme` and `.r` since the first parts do match. It also completely ig
 
 ### Self-Given score
                C    263 pts  9 files, 679 linebreaks, 12k chars
-               R    37 pts  1 files, 47 linebreaks, 1k chars
+               R    43 pts  1 files, 56 linebreaks, 2k chars
             Text    52 pts  3 files, 117 linebreaks, 2k chars
-           Total    352 pts  13 files, 843 linebreaks, 17k chars
+           Total    358 pts  13 files, 852 linebreaks, 17k chars
