@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define version "sloccy version 0.0.1, https://modula.dev"
+#define version "sloccy version 0.0.2, https://modula.dev"
 #define config_name "/usr/local/etc/sloccy.txt"
 #define true -1
 #define false 0
