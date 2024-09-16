@@ -26,8 +26,17 @@ that belong to that family. Each Language-Family is separated
 by a `;` character, and each extension or name is separated
 with whitespace.
 
-## Bugs / Missing Features
-- completely ignores comments and empty lines
+### Planned Features
+
+- custom values for `lineScalar` based on the language.
+probably get the scores for each language by downloading
+a bunch of very large samples and seeing what the average char/lines is
+- custom colors for each language
+- updating a directory's `readme.md` with sloccy badges using [ghloc](https://github.com/pajecawav/ghloc-web)
+
+## Known Bugs / Missing Features
+
+- comments and empty lines do not affect the count
 - the last line in the config, if there isn't a space after the last entry,
 will interpret it as having one less entry than it should
 - the `strncmp` function being used incorrectly returns `true` for strings of mismatched length
