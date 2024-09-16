@@ -1,0 +1,6 @@
+xxd -n help -i help.md ./generated/help.h
+xxd -n config -i config.md ./generated/config.h
+clang -o sloccy sloccy.c -w
+sudo ./sloccy -r
+./sloccy -c
+./sloccy
