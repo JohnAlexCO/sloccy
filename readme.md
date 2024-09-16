@@ -8,7 +8,6 @@ the expected average characters-per-line and number of characters.
 
 ![image](https://github.com/user-attachments/assets/8b3c5b06-5d74-4b6c-bab8-3dc4e4993e84)
 
-
 ## Basic Usage
 
 - `-h` flag will print a help message
@@ -35,6 +34,6 @@ such as `.readme` and `.r` since the first parts do match. It also completely ig
 
 ## Sloccy's Score
                C    261 pts  9 files, 672 lines, 12696 chars
-               R    20 pts  1 files, 34 lines, 1005 chars
-            Text    28 pts  3 files, 97 lines, 1392 chars
-           Total    309 pts  13 files, 803 lines, 15093 chars
+               R    23 pts  1 files, 37 lines, 1134 chars
+            Text    36 pts  3 files, 105 lines, 1773 chars
+           Total    320 pts  13 files, 814 lines, 15603 chars
